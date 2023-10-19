@@ -104,6 +104,51 @@ function checkForArray(input) {
       return arr_nums.filter(n=> n.length).length;  
      }
     arr_nums = [2,8,[6],3,3,5,3,4,[5,4]]
-    console.log("Number of arrays inside the said array: "+test(arr_nums));
+    let new_arr_nums1 = test(arr_nums);
+    console.log(`Number of arrays inside the said array: ${new_arr_nums1}`);
     arr_nums = [2,8,[6,3,3],[4],5,[3,4,[5,4]]]
     console.log("Number of arrays inside the said array: "+test(arr_nums));
+
+
+    // const arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    // function mostFrequent(arr1) {
+    //   var count = {};
+    //   var compare = 0;
+    //   var mostFrequent;
+
+    //   for (var i = o, valuess = arr1.length; i < valuess; i ++) {
+    //     var frequent = arr1[i];
+    //     if (count[frequent] === undefined){
+    //       count[frequent] = 1;
+    //     }else{
+    //       count[frequent] = count[frequent] + 1;
+    //     }
+    //     if (count[frequent] > compare){
+    //       compare = count[frequent];
+    //       mostFrequent = arr1[i]
+    //     }
+    //   }
+    // }
+
+    //Write a function that will output the most frequent item in an array.
+
+    var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+    var mf = 1;
+    var m = 0;
+    var item;
+    for (var i=0; i<arr1.length; i++)
+    {
+        for (var j=i; j <arr1.length; j++)
+        {
+                if (arr1[i] == arr1[j])
+                  m++;
+                if (mf < m )
+                {
+                  mf=m; 
+                  item = arr1[i];
+                }
+        }
+        m=0;
+    }
+    // console.log(item+" ( " +mf +" times ) ") ;
+    console.log(`${item} appears ( ${mf} times ) `);
